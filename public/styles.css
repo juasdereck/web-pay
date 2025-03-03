@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --primary-bg-color: #f0fff0;
+    --primary-text-color: #3d3d3d;
+    --primary-form-text-color: #535258;
+    --button-bg-color: linear-gradient(135deg, #64a864, #6586c2);
+    --button-hover-bg-color: linear-gradient(135deg, #6586c2, #64a864 );
+    --input-bg-color: #ffffff;
+    --input-border-color: #ccc;
+    --input-focus-border-color: #a3ffa7;
+    --form-bg-color: #ffffff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e3ffe3, #e0ebff);
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/noisy.png');
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    border: 1px var(--input-focus-border-color);
+    background-color: var(--form-bg-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.048);
+}
+
+h2 {
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+}
+
+.__labels-password {
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.5rem;
+}
+
+.__labels-password a {
+    font-size: .7rem;
+    text-decoration: none;
+    transform: translate(12px, 1px)
+}
+
+.labels-password a:hover {
+    text-decoration: underline;
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    transform: translateX(-12px);
+    color: var(--primary-form-text-color);
+    align-self: flex-start;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg-color);
+}
+
+input:focus {
+    border-color: var(--input-focus-border-color);
+    outline: none;
+}
+
+.message {
+    font-size: .7rem;
+    background-color: rgb(255, 165, 165);
+    border-radius: 4px;
+    padding: 8px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+button {
+    font-size: 0.8rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    background: var(--button-bg-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+button:hover {
+    background: var(--button-hover-bg-color);
+}
+
+#card-element {
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.StripeElement {
+    box-sizing: border-box;
+    height: auto;
+    width: 300px;
+    padding: 10px 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.StripeElement--focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+#payment-form {
+    width: auto;
+    padding: 1rem;
+}
+
+.select-amount {
+    padding: 1rem 2rem;
+    font-size: 14px;
+    color: var(--primary-text-color);
+    
+}
+
+.__payment-message {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.secure-msg {
+    font-size: 0.7rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--button-hover-bg-color);
+    padding-top: 2rem;
+}

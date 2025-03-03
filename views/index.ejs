@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log In: Please Log-In to Continue</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <% if (!user) { %>
+        <h2>Please Log-In to Continue</h2>
+        <form id="login-form" action="/login" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div class="__labels-password">
+                <label for="password">Password:</label>
+                <a href="#reset-password">¿Forgot your password?</a>
+            </div>
+            <input type="password" id="password" name="password" required>
+            <% if (errorMessage) { %>
+                <div class="message" style="color: red; margin-bottom: 10px;">
+                    🛡 <%= errorMessage %>
+                </div>
+                <% } %>
+                    <button class="__login-button _primary-button" type="submit">Login</button>
+        </form>
+        <% } else { %>
+            <h2>Checkout</h2>
+            <form id="payment-form">
+                <div class="select-amount"> Select amount pay
+                    <select name="amount" id="amount-payment">
+                        <option value="50">0.50 USD</option>
+                        <option value="100">1 USD</option>
+                        <option value="500">5 USD</option>
+                        <option value="1000">10 USD</option>
+                    </select>
+                </div>
+                <div id="card-element"></div>
+                <button id="submitButton">Pay Now</button>
+                <div class="__payment-message" id="error-message" role="alert" style="color: brown;"></div>
+                <div class="__payment-message" id="success-message" role="alert" style="color: green;"></div>
+                <div class="secure-msg">Secure site, secure payment</div>
+            </form>
+            <% } %>
+                <script src="js/stripe.min.js"></script>
+</body>
+
+</html>
